@@ -11,8 +11,12 @@ public class Enemy : MonoBehaviour
     public float shootInterval = 1f;
     public float shootTimer = 0f;
  
+    public float speedPerLevel = 0.2f;
+ 
     private void Start()
     {
+        speed += speedPerLevel * LevelController.level;
+ 
         borderPosX = Corn.singleton.transform.position.x;
     }
  
@@ -55,5 +59,4 @@ public class Enemy : MonoBehaviour
     {
         Corn.singleton.TakeDamage();
     }
- 
 }
